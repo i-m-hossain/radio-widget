@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import style from "./css/App.module.css";
+import "./css/global.css";
+
+import StationsList from "./components/StationsList/StationsList";
+import ControlStation from "./components/ControlStation/ControlStation";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getStations } from "./store/slices/stationsSlice";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch();
+    const { stations, loading } = useSelector((state) => state.stations);
+
+    useEffect(() => {
+        dispatch(getStations());
+    }, [dispatch]);
+    return (
+        <div className={`${style.container} common`}>
+            <StationsList stations={stations} loading={loading} />
+            <ControlStation stations={stations} loading={loading} />
+        </div>
+    );
 }
 
 export default App;

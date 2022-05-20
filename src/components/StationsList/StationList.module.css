@@ -1,0 +1,21 @@
+.stationContainer {
+    background-color: #2f2f39;
+    margin: 100px 40px;
+    width: 400px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.station {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    border-bottom: 1px solid #43434c;
+}
+.loader {
+    text-align: center;
+}
+.containerShadow {
+    box-shadow: 0 35px 22px -5px #14141b;
+}

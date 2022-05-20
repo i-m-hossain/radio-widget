@@ -1,0 +1,41 @@
+.stationContainer {
+    background-color: #2f2f39;
+    margin: 100px 40px;
+    width: 400px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    position: relative;
+}
+
+.station {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    border-bottom: 1px solid #43434c;
+}
+.selection {
+    margin-top: 20px;
+    border-bottom: 0px;
+}
+.current {
+    color: #edad61;
+    text-align: center;
+    text-transform: uppercase;
+}
+.channel {
+    margin-top: -30px;
+    text-align: center;
+}
+.minus {
+    cursor: pointer;
+}
+.plus {
+    cursor: pointer;
+}
+.disabled {
+    cursor: not-allowed;
+}
+.containerShadow {
+    box-shadow: 0 35px 22px -5px #14141b;
+}
