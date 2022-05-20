@@ -14,10 +14,14 @@ const ControlStation = ({ stations, loading }) => {
         <div className={`${style.stationContainer} ${style.containerShadow}`}>
             <Header></Header>
             <StationContainer>
-                <div className={style.station}>
-                    <h4>{stations[currentStation]?.name}</h4>
-                    <h4>{stations[currentStation]?.frequency}</h4>
-                </div>
+                {!loading ? (
+                    <div className={style.station}>
+                        <h4>{stations[currentStation]?.name}</h4>
+                        <h4>{stations[currentStation]?.frequency}</h4>
+                    </div>
+                ) : (
+                    <h4 className={style.loader}>Loading...</h4>
+                )}
                 <div className={`${style.station} ${style.selection}`}>
                     <span
                         className={
@@ -51,14 +55,21 @@ const ControlStation = ({ stations, loading }) => {
                     </span>
                 </div>
                 <div>
-                    {stations
-                        .slice(currentStation + 1, currentStation + 3)
-                        .map((item) => (
-                            <div className={style.station} key={item.frequency}>
-                                <h4>{item.name}</h4>
-                                <h4>{item.frequency}</h4>
-                            </div>
-                        ))}
+                    {!loading ? (
+                        stations
+                            .slice(currentStation + 1, currentStation + 3)
+                            .map((item) => (
+                                <div
+                                    className={style.station}
+                                    key={item.frequency}
+                                >
+                                    <h4>{item.name}</h4>
+                                    <h4>{item.frequency}</h4>
+                                </div>
+                            ))
+                    ) : (
+                        <h4 className={style.loader}>Loading...</h4>
+                    )}
                 </div>
             </StationContainer>
             <Footer>

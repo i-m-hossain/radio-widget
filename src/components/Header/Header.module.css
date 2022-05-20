@@ -12,3 +12,9 @@
     text-transform: uppercase;
 }
 
+.back {
+    cursor: pointer;
+}
+.switch {
+    cursor: pointer;
+}

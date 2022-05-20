@@ -15,6 +15,7 @@
 }
 .loader {
     text-align: center;
+    margin-top: 40px;
 }
 .containerShadow {
     box-shadow: 0 35px 22px -5px #14141b;
